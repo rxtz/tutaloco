@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply transition-all;
+  font-feature-settings: 'tnum';
+}
+
+::selection {
+  @apply !text-basalt;
+}
+
+a:hover {
+  @apply !underline !decoration-inherit;
+}
+
+svg {
+  @apply inline-block;
+}
+
+.p {
+  @apply px-3 md:px-6;
+}
+
+.-p {
+  @apply p -mx-3 md:-mx-6;
+}
+
+.bar {
+  @apply flex justify-between items-center;
+}
+
+.center {
+  @apply !absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2;
+}
+
+.stick {
+  @apply sticky top-0 z-20 h-max;
+}
+
+.bling {
+  @apply border-2 border-transparent focus:border-drip hover:bg-neutral-800 rounded-lg outline-none;
+}
+
+.font-condensed {
+  font-stretch: extra-condensed;
+}
+
+.font-expanded {
+  font-stretch: extra-expanded;
+}
