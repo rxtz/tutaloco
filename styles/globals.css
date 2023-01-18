@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (prefers-color-scheme: light) {
+  html,
+  img,
+  iframe {
+    filter: invert();
+  }
+}
+
 * {
   @apply transition-all;
   font-feature-settings: 'tnum';
