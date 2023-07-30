@@ -6,7 +6,7 @@
 
     @media (prefers-color-scheme: dark) {
       * {
-        fill: #ddd;
+        fill: #eee;
       }
     }
   </style>

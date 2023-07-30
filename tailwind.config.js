@@ -9,13 +9,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: 'JetBrains Mono, ui-monospace, monospace',
+        mono: 'JetBrains Mono, ui-monospace, monospace !important',
       },
       colors: {
+        ink: '#eee',
         drip: '#ff0',
         ice: '#0ff',
-        carbon: '#161616',
-        basalt: '#080808',
+        carbon: '#111',
+        basalt: '#222',
       },
     },
   },

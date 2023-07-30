@@ -51,10 +51,10 @@ svg {
   @apply border-2 border-transparent focus:border-drip hover:bg-neutral-800 rounded-lg outline-none;
 }
 
-.font-condensed {
+.font-fit {
   font-stretch: extra-condensed;
 }
 
-.font-expanded {
+.font-fat {
   font-stretch: extra-expanded;
 }

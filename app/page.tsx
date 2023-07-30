@@ -4,11 +4,10 @@ import useSWR from 'lib/swr';
 import credits from 'lib/credits.json';
 import { Collapse } from '@geist-ui/core';
 
+type Libro = { cita: string; dice: string }[];
+
 export default function Page() {
-  const [data, isLoading] = useSWR('/api/libro') as [
-    { libro: { cita: string; dice: string }[] },
-    boolean,
-  ];
+  const [libro, isLoading] = useSWR<Libro>('/api/libro');
 
   return (
     <div className="mx-auto max-w-2xl">
@@ -23,12 +22,16 @@ export default function Page() {
 
       {!isLoading && (
         <Collapse.Group accordion={false}>
-          {data.libro.map((lqqd, i) => (
-            <Collapse id={lqqd.cita} title={lqqd.cita} initialVisible key={i}>
-              {lqqd.dice.split('\n').map((d, i) => (
-                <p className="text-lg" key={i}>
-                  {d}
-                </p>
+          {libro.map((lqqd) => (
+            <Collapse
+              className="!text-lg"
+              id={lqqd.cita}
+              title={lqqd.cita}
+              initialVisible
+              key={lqqd.cita}
+            >
+              {lqqd.dice.split('\n').map((d) => (
+                <p key={d}>{d}</p>
               ))}
             </Collapse>
           ))}

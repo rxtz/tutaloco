@@ -1,6 +1,8 @@
+'use client';
+
 import _useSWR from 'swr';
 
-export const useSWR = (url: string, revalidate = false) => {
+const useSWR = <T>(url: string, revalidate = false) => {
   const { data, isLoading, error } = _useSWR(
     url,
     (...args) => fetch(...args).then((res) => res.json()),
@@ -11,7 +13,7 @@ export const useSWR = (url: string, revalidate = false) => {
     },
   );
 
-  return [data, isLoading, error];
+  return [data, isLoading, error] as [T, boolean, boolean];
 };
 
 export default useSWR;
